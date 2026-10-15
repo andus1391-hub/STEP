@@ -80,6 +80,24 @@ html {
 }
 
 /* ========================기본 body 꾸미기========== */
+/* 스크롤바 꾸미기 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C8BBA8;
+    border-radius: 10px;
+    border: 2px solid #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8D7A67;
+}
 
 body {
     font-family: 'Pretendard';
@@ -104,6 +122,7 @@ body {
     z-index: 1000;
     background-color: #F6F3EB;
 }
+
 
 .nav_wrap {
     display: flex;
@@ -245,7 +264,7 @@ body {
 
 /* =============================main 시작====================== */
 #main {
-    background: url(../1.Main/main_banner2.png) no-repeat center;
+    background: url(../images/Main/main_banner2.png) no-repeat center;
     height: 800px;
     margin-top: 186px;
     display: flex;
@@ -497,7 +516,7 @@ body {
 
 /*=============================== section2====================================== */
 #section2 {
-    background: url(../1.Main/section2_bg.png) no-repeat center;
+    background: url(../images/Main/section2_bg.png) no-repeat center;
     height: 1100px;
     margin-top: 354px;
     scroll-margin-top: 70px;
@@ -510,7 +529,7 @@ body {
     text-align: center;
     padding-top: 48px;
     padding-bottom: 95px;
-    background: url(../1.Main/icon2.svg) no-repeat;
+    background: url(../images/Main/icon2.svg) no-repeat;
     background-position: 54% 21px;
     height: 59px;
 }
@@ -575,7 +594,7 @@ body {
     border-radius: 0 20px 20px 20px;
     display: flex;
     justify-content: center;
-    background-image: url(../1.Main/theme_bottom.svg);
+    background-image: url(../images/Main/theme_bottom.svg);
     background-repeat: no-repeat;
     background-position: 97% 94%;
 }
@@ -634,7 +653,7 @@ body {
     width: 1920px;
     height: 1083px;
     margin: 141px auto;
-    background: url(../1.Main/promotion_bottom.svg) no-repeat 96% 95%;
+    background: url(../images/Main/promotion_bottom.svg) no-repeat 96% 95%;
 }
 
 #section3 h1 {
@@ -643,7 +662,7 @@ body {
     font-weight: 400;
     text-align: center;
     padding: 75px 0 56px;
-    background-image: url(../1.Main/icon3.svg);
+    background-image: url(../images/Main/icon3.svg);
     background-repeat: no-repeat;
     background-position: 45% center;
 }
@@ -737,7 +756,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 32px;
     font-weight: 400;
-    background-image: url(../1.Main/icon4.svg);
+    background-image: url(../images/Main/icon4.svg);
     background-repeat: no-repeat;
     background-position: 56% 40%;
 
@@ -770,7 +789,7 @@ body {
     position: absolute;
     width: 100%;
     height: 70px;
-    background: url(../1.Main/section4_tag_pin.svg) no-repeat center;
+    background: url(../images/Main/section4_tag_pin.svg) no-repeat center;
     background-size: contain;
     top: -30px;
     left: 19px;
@@ -856,7 +875,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 32px;
     font-weight: 400;
-    background-image: url(../1.Main/icon5.svg);
+    background-image: url(../images/Main/icon5.svg);
     background-repeat: no-repeat;
     background-position: 52%;
     margin-bottom: 20px;
@@ -947,7 +966,7 @@ body {
 #section6 {
     width: 1920px;
     margin: 0 auto;
-    background-image: url(../1.Main/section6_bg_icon.svg), url(../1.Main/section6_bg.png);
+    background-image: url(../images/Main/section6_bg_icon.svg), url(../images/Main/section6_bg.png);
     background-repeat: no-repeat, no-repeat;
     background-position: 9% 83%, center;
 }
@@ -1059,7 +1078,7 @@ body {
 
 /* ==============================footer ================================ */
 #footer {
-    background-image: url(../1.Main/footer_bg.png);
+    background-image: url(../images/Main/footer_bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1920px 463px;
@@ -1185,7 +1204,7 @@ body {
     height: 80px;
     border-radius: 50%;
     background-color: #EAE6DA;
-    background-image: url(../1.Main/arrow.png);
+    background-image: url(../images/Main/arrow.png);
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
