@@ -1,0 +1,962 @@
+@charset "utf-8";
+
+/* webfont */
+/* 웹폰트없으면 지우세요!!! */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+/* ========================기본 body 꾸미기========== */
+/* 스크롤바 꾸미기 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C8BBA8;
+    border-radius: 10px;
+    border: 2px solid #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8D7A67;
+}
+
+body {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    line-height: 1.5;
+    color: #33363F;
+    background-color: #F6F3EB;
+}
+
+#wrap {
+    min-width: 1880px;
+    margin: 0 auto;
+}
+
+/* ====================header============================= */
+#header {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #F6F3EB;
+}
+
+
+.nav_wrap {
+    display: flex;
+    align-items: center;
+
+}
+
+.inner_header {
+    display: flex;
+    width: 1880px;
+    margin: 0 auto;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 144px 0 66px;
+}
+
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #8D7A67;
+    padding: 29px 50px;
+    transition: all 0.5s;
+    /* background-color: aqua; */
+
+    /* 비행기 호버모션 */
+    position: relative;
+    z-index: 1;
+}
+
+.gnb li a .plane {
+    position: absolute;
+    width: 20px;
+
+    top: 50%;
+    right: 18px;
+
+    opacity: 0;
+
+    transform: translateY(-50%) rotate(-20deg);
+}
+
+
+.gnb li a:hover {
+    font-weight: 500;
+}
+
+.gnb li a.active {
+    font-weight: 600;
+}
+
+.gnb li a.active .plane {
+    top: 29%;
+    left:69%;
+    opacity: 1;
+    transform: rotate(10deg);
+    animation: none;
+}
+
+
+.gnb li:hover .plane {
+    animation: planeUp 1.5s ease-out forwards;
+}
+
+/* 비행기 애니메이션 */
+
+@keyframes planeUp {
+    0% {
+        left: 20px;
+        top: 35px;
+        opacity: 0;
+        transform: rotate(20deg);
+    }
+
+    /* 살짝 나타남 */
+    20% {
+        opacity: 1;
+    }
+
+    /* 위로 날아감 */
+    100% {
+        left: 120px;
+        top: 0px;
+        opacity: 0;
+        transform: rotate(20deg);
+    }
+}
+
+
+.util {
+    margin-right: 92px;
+}
+
+
+.right {
+    display: flex;
+}
+
+.right li a {
+    display: block;
+    padding: 0 10px;
+    color: #8d7a67;
+    transition: all 0.5s;
+}
+
+.right li a:hover {
+    font-weight: 600;
+}
+
+/* .topbtn {
+    width: 63px;
+    height: 63px;
+    background-color: #EAE5D9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 95px;
+    bottom: 72px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.topbtn a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbtn img {
+    display: block;
+} */
+
+/* ====================header============================= */
+
+#banner{
+    width: 100%;
+    height: 800px;
+    margin-bottom: 120px;
+}
+
+#banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 0%;
+}
+
+
+/* =============================section1 =================================*/
+#section1{
+    width: 1920px;
+    height: 960px;
+    margin: 20px auto;
+}
+
+.section1_wrap{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+.pic_wrap{
+    position: relative;
+    width: 60%;
+    height: 960px;
+}
+
+
+#section1 .memo{
+    position: absolute;
+    top: -18px;
+    left: 503px;
+     z-index: 1;
+}
+
+#section1 .pic {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    z-index: 2;
+    /* 왼쪽에서 제자리 확대 */
+    transform: scale(0.36);
+    transform-origin: top left;
+    will-change: transform;
+}
+
+#section1 .memo img{
+    width: 553px;
+    height: 573px;
+    display: block;
+}
+
+#section1 .pic img{
+    width:1020px;
+    height: 800px;
+    display: block;
+}
+
+.text_top{
+    margin-bottom: 67px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#section1 .text_top {
+    display: flex;
+    align-items: center;
+    gap: 39px;
+    position: relative;
+    left: -70px;
+}
+
+#section1 .text_top::after {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 1px;
+    background-color: #33363F;
+}
+
+#section1 .text_top.line_active::after{
+     transform: scaleX(1);
+}
+
+
+.text_wrap h1{
+     font-family: "Noto Sans KR", sans-serif;
+     font-size: 32px;
+     font-weight: 400;
+     margin-bottom: 45px;
+}
+
+.text_wrap span{
+    display: block;
+    font-family: 'PalchilmmDailyItalic';
+    font-size:36px;
+    font-weight: 400;
+   margin-bottom:40px ;
+}
+
+.text_wrap p:last-child {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+/* =============================section1 =================================*/
+/* ========== ABOUT: 이미지 확대 후 가로 스크롤 ========== */
+.horizontal_scroll {
+    position: relative;
+    height: calc(100vh + 3400px); /* 스크롤 애니메이션 진행 거리 */
+}
+.horizontal_sticky {
+    position: sticky;
+    top: 80px; /* 기존 고정 헤더 높이 */
+    height: calc(100vh - 80px);
+    overflow: hidden;
+}
+.horizontal_track {
+    display: flex;
+    width: 3840px;
+    height: 960px;
+    will-change: transform;
+}
+/* 원래 section 크기와 내부 요소 위치 유지 */
+.horizontal_track #section1,
+.horizontal_track #section2 {
+    flex: 0 0 1920px;
+    width: 1920px;
+    height: 960px;
+    
+}
+
+/* =============================section2 =================================*/
+#section2{
+    width: 1920px;
+    height: 960px;
+     margin: 20px auto;
+    background-image: url(../images/About/image\ 62.svg);
+    background-repeat: no-repeat;
+    background-position: 7% 77%;
+}
+
+.section2_wrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+#section2 .pic_wrap{
+    position: relative;
+    width: 56%;
+    height: 960px;
+}
+
+
+#section2 .memo{
+    position: absolute;
+    top: -20px;
+    left: 20px;
+     z-index: 1;
+}
+
+#section2 .pic {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    z-index: 2;
+
+    /* 사진이 오른쪽에서 커지도록 */
+     transform: scale(0.36);
+    transform-origin: top right;
+    will-change: transform;
+}
+
+#section2 .memo img{
+    width: 553px;
+    height: 573px;
+    display: block;
+}
+
+#section2 .pic img{
+    width:1020px;
+    height: 680px;
+    display: block;
+}
+
+#section2 .text_wrap .text_top{
+    margin-bottom: 67px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#section2 .text_top {
+    display: flex;
+    align-items: center;
+    gap: 39px;
+    position: relative;
+    left:-19px;
+}
+
+#section2 .text_top::after {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 1px;
+    background-color: #33363F;
+
+  
+}
+
+#section2 .text_top.line_active::after{
+     transform: scaleX(1);
+}
+
+
+#section2 .text_wrap h1{
+     font-family: "Noto Sans KR", sans-serif;
+     font-size: 32px;
+     font-weight: 400;
+     margin-bottom: 45px;
+}
+
+#section2 .text_wrap span{
+    display: block;
+    font-family: 'PalchilmmDailyItalic';
+    font-size:36px;
+    font-weight: 400;
+   margin-bottom:40px ;
+}
+
+#section2 .text_wrap p:last-child {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* =============================section2 =================================*/
+
+
+
+
+/* =============================section3 =================================*/
+#section3{
+    width: 1920px;
+    margin: 200px auto 0;
+}
+
+.content{
+    display: flex;
+}
+
+.content li{
+    width: 640px;
+    height: 950px;
+    position: relative;
+    color: #fff;
+  
+    flex: 0 0 640px;
+    overflow: hidden;
+}
+
+.content img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content .text_box{
+    position: absolute;
+    top: 246px;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+.content .hover_text{
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.content h3{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+
+.content span{
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+     margin-bottom: 44px;
+}
+
+.content p{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.content li .hover_img {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* 기본 상태: 본문 숨기기 */
+
+
+/* 호버 상태: 본문 나타나기 */
+.content li:hover .hover_text {
+    opacity: 1;
+
+}
+/* 호버 이미지 기본 상태 */
+.content li .hover_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* 호버하면 이미지 변경 */
+.content li:hover .hover_img {
+    opacity: 1;
+    backdrop-filter: blur(3px);
+}
+
+/* =============================section3 =================================*/
+
+
+
+
+/* =============================section4 =================================*/
+
+#section4{
+    width: 100%;
+    height: 400vh;
+    margin-top: 240px;
+     position: relative;
+}
+
+#section4 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 0%;
+    display: block;   
+}
+
+#section4 .video_wrap, 
+#section4 .slogan_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#section4 .video_wrap::after, 
+#section4 .slogan_img::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section4_wrap {
+    position:sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#section4 .slogan_box{
+    position: absolute;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-align: center;
+
+    width: 100%;
+    z-index: 3;
+    height: 60px;
+
+}
+
+#section4 .slogan_box p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    font-size: 48px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    opacity: 0;
+    transform: translate(-50%, 30px);
+    transition: opacity 0.8s, transform 0.8s;
+    
+}
+
+
+#section4 .video_wrap {
+    z-index: 1;
+}
+
+#section4 .slogan_img {
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+#section4 .slogan_img.on {
+    opacity: 1;
+}
+
+#section4 .slogan_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(4px);
+}
+
+
+/* 현재 문장 */
+#section4 .slogan_box p.on {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Scroll Down */
+#section4 .scroll_down {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+
+    color: #fff;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 화살표 */
+#section4 .scroll_arrow {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: 0 auto 15px;
+    animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+    0%, 100% {
+        translate: 0 -5px;
+        opacity: 0.5;
+    }
+
+    50% {
+        translate: 0 3px;
+        opacity: 1;
+    }
+}
+
+/* 마지막 문장 글자 애니메이션 */
+#section4 .slogan_box p:last-child span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(var(--move));
+    transition: transform 1.5s ease,
+                opacity 1.5s ease,
+                filter 1.5s ease;
+}
+
+/* 글자들이 제자리로 모임 */
+#section4 .slogan_box p:last-child.on span {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+
+/* =============================section4 =================================*/
+
+
+
+
+/* ==============================footer ================================ */
+#footer {
+    background-image: url(../images/Main/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1920px 463px;
+    margin-top: 220px;
+}
+
+.inner_footer {
+    width: 1790px;
+    height: 463px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-image: url(../1.Main/footer_bottom_path.svg), url(../1.Main/footer_bottom_plane.svg);
+   background-repeat: no-repeat, no-repeat;
+   background-position: 100% 93%, 0% 82%;
+   background-size: auto, 28px auto; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 선 */
+.footer_path {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 7%;
+    clip-path: inset(0 100% 0 0);
+    animation: lineDraw 11s linear infinite;
+}
+
+/* 비행기 */
+.footer_plane {
+    position: absolute;
+    width: 30px;
+    height: 28px;
+    left: 0;
+    top: calc(100% - 7% - 57.1px);
+    bottom: auto;
+
+    offset-path: path("M0.2,56.25 C161.68,16.86 283.37,18.64 366.70,28.56 C422.55,35.20 479.00,47.60 571.02,44.22 C636.76,41.80 652.15,33.86 746.04,30.51 C818.32,27.92 827.64,31.98 895.05,28.53 C980.30,24.17 985.19,16.66 1049.62,13.21 C1081.30,11.53 1097.66,12.40 1273.18,27.15 C1430.77,40.39 1439.09,41.50 1467.31,40.33 C1504.22,38.79 1520.98,35.60 1650.68,18.64 C1710.95,10.76 1759.66,4.59 1789.90,0.80");
+
+    offset-anchor: 0% 50%;
+    offset-rotate: auto;
+    animation: planeMove 11s linear infinite;
+}
+
+
+@keyframes lineDraw {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* 비행기 이동 */
+@keyframes planeMove {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}
+
+.footer_logo {
+    padding-top: 200px;
+
+}
+
+.news {
+    text-align: left;
+    color: #EAE6DA;
+    padding-top: 150px;
+}
+
+
+#footer .eng {
+    font-family: 'Ammys Handwriting', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 8px;
+    transform: rotate(-3deg);
+    margin-bottom: 22px;
+}
+
+#footer p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+.input {
+    width: 590px;
+    border: 1px solid #EAE6DA;
+    border-radius: 100px;
+    padding: 32px 0 32px 30px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.input input {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #EAE5D9;
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.input input::placeholder {
+    color: #EAE5D9;
+}
+
+.input_btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #EAE6DA;
+    background-image: url(../images/Main/arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 2px;
+    right: -9px;
+    cursor: pointer;
+}
+
+.sns ul {
+    display: flex;
+    gap: 29px;
+    padding-top: 150px;
+}
+
+.sns li a {
+    transition: all 0.5s;
+}
+
+.sns li a:hover {
+    opacity: 60%;
+}
+
+
+
+/* ==============================footer ================================ */
+
+
+
+
+
+
+
+
+
+
+
