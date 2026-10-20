@@ -30,7 +30,27 @@ $(function () {
 
 // <!-- Initialize Swiper -->
 // section1 slide 
+// $(function () {
+//     var swiper = new Swiper(".section1", {
+//         slidesPerView: "auto",
+//         spaceBetween: 32,
+//         centeredSlides: false,
+//         loop: true,
+//         autoplay: {
+//             delay: 0,
+//             disableOnInteraction: false,
+//         },
+//         speed: 5000,
+//     });
+// });
+
+
+// section1 카드 슬라이드 마우스 올리면 멈추고 내리면 다시 움직임
+
+
+
 $(function () {
+
     var swiper = new Swiper(".section1", {
         slidesPerView: "auto",
         spaceBetween: 32,
@@ -38,13 +58,52 @@ $(function () {
         loop: true,
         autoplay: {
             delay: 0,
-            disableOnInteraction: false,
+            disableOnInteraction: false
         },
-        speed: 5000,
+        speed: 5000
     });
-});
-// section1 카드 슬라이드 마우스 올리면 멈추고 내리면 다시 움직임
 
+    var normalSpeed = 5000;
+
+    // 마우스를 올리면 현재 위치에서 즉시 멈춤
+    $(".section1").mouseenter(function () {
+
+        var position = swiper.getTranslate();
+
+        swiper.autoplay.stop();
+        swiper.setTransition(0);
+        swiper.setTranslate(position);
+
+    });
+
+    // 마우스를 떼면 원래 속도로 다시 이동
+    $(".section1").mouseleave(function () {
+
+        var position = swiper.getTranslate();
+
+        // 다음 슬라이드까지 남은 거리
+        var nextIndex = swiper.activeIndex + 1;
+
+        if (nextIndex >= swiper.slides.length) {
+            nextIndex = 0;
+        }
+
+        var targetPosition = -(swiper.slidesGrid[nextIndex] || 0);
+        var distance = Math.abs(targetPosition - position);
+
+        // 남은 거리에 비례해 이동 시간 계산
+        var slideDistance = 450 + 32;
+        var remainingSpeed = normalSpeed * (distance / slideDistance);
+
+        swiper.wrapperEl.style.transitionTimingFunction = "linear";
+
+        swiper.slideTo(nextIndex, remainingSpeed);
+
+        swiper.autoplay.start();
+
+    });
+
+});
 
 
 
