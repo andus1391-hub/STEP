@@ -903,7 +903,7 @@ body {
     position: absolute;
     top: 242px;
     left: 300px;
-    transform: rotate(-11deg);
+    transform: rotate(-9deg);
     z-index: 99;
 }
 
@@ -913,7 +913,7 @@ body {
     height: 576px;
     display: block;
     position: absolute;
-}
+  }
 
 #section5 .pic_img1 {
     width: 517px;
