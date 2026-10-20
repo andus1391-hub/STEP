@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1848"> <!-- 1920 - (66*2) + (60) = 1848px -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #banner video {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            overflow: hidden;
+        }
+
+        #banner {
+            display: block;
+            overflow: hidden;
+            height: 700px;
+            position: relative;
+        }
+    </style>
+
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>STEP</title>
+
+    <!--외부 webfont 연결-->
+    <link rel="stylesheet" href="css/font.css">
+
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="css/style2.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS css 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/Main/favicon_icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="wrap"> <!-- 전체 페이지 색상 -->
+        <!-- =================================header시작============================================ -->
+
+        <div id="header">
+            <div class="inner_header">
+                <div class="nav_wrap">
+                    <h1 class="logo">
+                        <a href="index.html"><img src="./images/Main/header_logo.svg" alt="logo"></a>
+                    </h1>
+                    <div class="nav">
+                        <ul class="gnb">
+                            <li><a href="about.html" class="active"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">ABOUT</a></li>
+                            <li><a href="#section1"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">EXPLORE</a>
+                            </li>
+                            <li><a href="#section2"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">THEME</a>
+                            </li>
+                            <li><a href="Specials.html"><img src="./images/Main/icon1.svg" alt="icon1" class="plane">SPECIALS</a>
+                            </li>
+                            <li><a href="#"><img src="./images/Main/icon1.svg" alt="icon1" class="plane">GUIDE</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="util">
+                    <ul class="right">
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">예약조회</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="topbtn"><img src="./images/Main/button_icon.svg" alt="btn"></div> -->
+        <!-- =================================header끝============================================ -->
+
+        <!-- ==============banner=================== -->
+        <div id="banner">
+            <video muted autoplay loop>
+                <source src="./images/About/banner.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- ==============banner=================== -->
+
+
+        <!-- ==============section1=================== -->
+        <div class="horizontal_scroll">
+            <div class="horizontal_sticky">
+                <div class="horizontal_track">
+                    <div id="section1">
+                        <div class="section1_wrap">
+
+                            <div class="pic_wrap">
+                                <div class="memo"><img src="./images/About/section1_memo.png" alt=""></div>
+                                <div class="pic"><img src="./images/About/section1_pic.png" alt=""></div>
+                            </div>
+
+                            <div class="text_wrap">
+                                <p class="text_top">ABOUT STEP</p>
+
+                                <h1>WHY WE STARTED</h1>
+                                <p><span>혼자 떠나는 여행도 <br> 충분히 특별할 수 있으니까</span></p>
+                                <p>여행을 떠나고 싶어도 <br>함께 갈 사람을 찾는 것부터 망설여질 때가 있습니다. <br>우리는 그 망설임 대신 <br> “그냥, 떠나도 괜찮아.”라는
+                                    마음을 전하고
+                                    싶었습니다. <br><br>
+                                    누군가의 일정에 맞추기보다 내가 걷고 싶은 만큼 걷고, <br>머물고 싶은 곳에 조금 더 머무는 여행. <br><br>
+                                    내가 원하는 곳으로, 내가 원하는 속도로 <br><br>
+                                    혼자여서 더 자유로운 여행을 위해 STEP이 시작되었습니다.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- ==============section1=================== -->
+
+
+
+
+                    <!-- ==============section2=================== -->
+                    <div id="section2">
+                        <div class="section2_wrap">
+
+                            <div class="text_wrap">
+                                <p class="text_top">OUR STORY</p>
+
+                                <h1>WHAT WE WANT TO CREATE</h1>
+                                <p><span>혼자이기에 <br> 더 천천히 만나는 여행</span></p>
+                                <p>정해진 일정에 쫓기지 않고, <br>걷다가 마음에 드는 골목을 발견하는 것. <br><br>우리는 그 망설임 대신 <br> 잠시 멈춰 풍경을 바라보고,
+                                    <br>
+                                    우연히 만난 순간을 오래 기억하는 것. <br><br>
+                                    STEP은 많은 곳을 빠르게 경험하기보다 <br>한 곳을 온전히 느낄 수 있는 여행을 만들고 싶습니다. <br><br>
+                                    당신이 원하는 속도로 걷고, 당신만의 순간을 발견할 수 있도록.
+                                </p>
+                            </div>
+
+                            <div class="pic_wrap">
+                                <div class="memo"><img src="./images/About/section2_memo.png" alt=""></div>
+                                <div class="pic"><img src="./images/About/section2_pic.png" alt=""></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ==============section2=================== -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==============section3=================== -->
+
+        <div id="section3">
+            <div class="section3_wrap">
+                <ul class="content">
+
+                    <li>
+                        <div class="img_wrap">
+                            <img src="./images/About/section3_1_cover.png" alt="s1_cover">
+                            <img src="./images/About/section3_1_pic.png" alt="s1_hover" class="hover_img">
+                        </div>
+
+
+                        <div class="text_box">
+                            <h3>WHY STEP</h3>
+
+                            <div class="hover_text">
+                                <span>수많은 여행 중, 왜 STEP이어야 할까요?</span>
+                                <P>혼자 하는 여행은 자유롭지만 <br>처음부터 모든 것을 혼자 준비하기는 쉽지 않습니다. <br><br><br>
+                                    혼자 떠나는 여행의 설렘은 살리고 <br>
+                                    준비의 부담은 덜어내고 싶었습니다. <br><br>
+                                    혼자 여행하는 사람의 시선으로 <br>더 편안하고 자유로운 여행을 제안합니다.
+                                </P>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="img_wrap">
+                            <img src="./images/About/section3_2_cover.png" alt="s2_cover">
+                            <img src="./images/About/section3_2_pic.png" alt="s2_hover" class="hover_img">
+                        </div>
+
+
+                        <div class="text_box">
+                            <h3>OUR DIFFERENCE</h3>
+
+                            <div class="hover_text">
+                                <span>정해주는 여행보다 나만의 여행을</span>
+                                <p>혼자 걷기 좋은 길,<br>잠시 쉬어가기 좋은 공간, <br> 현지의 분위기를 느낄 수 있는 작은 장소까지.<br><br><br>
+                                    누구에게나 같은 여행이 아닌, <br>
+                                    당신의 취향과 속도에 맞는 여행을 만듭니다.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <div class="img_wrap">
+                            <img src="./images/About/section3_3_cover.png" alt="s3_cover">
+                            <img src="./images/About/section3_3_pic.png" alt="s3_hover" class="hover_img">
+                        </div>
+
+                        <div class="text_box">
+                            <h3>OUR VALUE</h3>
+
+                            <div class="hover_text">
+                                <span>우리가 중요하게 생각하는 것</span>
+                                <p>우리는 여행에서 <br> 얼마나 많은 곳을 보았는지보다 <br>그곳에서 어떤 시간을 보냈는지를 중요하게 생각합니다. <br><br> <br>
+                                    천천히 걷고, 마음에 드는 곳에 머물고, <br> 예상하지 못했던 순간을 만나는 것. <br><br><br>
+                                    그 모든 순간이 당신만의 여행이 될 수 있도록.
+                                </p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+
+        </div>
+        <!-- ==============section3=================== -->
+
+
+
+
+        <!-- ==============section4=================== -->
+        <div id="section4">
+            <div class="section4_wrap">
+
+                <div class="video_wrap">
+                    <video src="./images/About/bottom_video1.mp4" muted autoplay loop>
+                    </video>
+                </div>
+
+                <div class="slogan_img">
+                    <img src="./images/About/bottom_banner (2).png" alt="bottom_banner">
+
+                </div>
+
+                <div class="slogan_box">
+
+                    <p>혼자이기에 더 자유로운 여행</p>
+                    <p>여행의 시작부터 끝까지, 온전히 나를 위한 시간.</p>
+                    <p>STEP은 혼자 떠나는 여행의 새로운 방식을 만들어갑니다.</p>
+                    <p>YOUR JOURNEY BEGINS WITH A STEP</p>
+
+                </div>
+
+                <div class="scroll_down">
+                    <span class="scroll_arrow"></span>
+                    <p>Scroll Down</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- ==============section4=================== -->
+
+
+
+
+
+
+
+        <!--============================ footer ===========================-->
+        <div id="footer">
+            <div class="inner_footer">
+                <img src="./images/Main/footer_bottom_path.svg" class="footer_path" alt="path">
+                <img src="./images/Main/footer_bottom_plane.svg" class="footer_plane" alt="">
+                <h1 class="footer_logo"><img src="./images/Main/footer_logo.svg" alt="footer_logo"></h1>
+                <div class="news">
+                    <p class="eng">Solo Traveler's Everyday Path</p>
+                    <p>이메일로 새로운 여행 소식을 받아보세요.</p>
+                    <div class="input">
+                        <form action="" method="post">
+                            <input type="text" name="email" id="email" placeholder="이메일 주소를 입력해주세요.">
+                        </form>
+                        <div class="input_btn"></div>
+                    </div>
+                </div>
+
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><img src="./images/Main/sns_insta 1.svg" alt="ins"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_blog 1.svg" alt="blog"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_youtube 1.svg" alt="youtube"></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!--============================= footer ========================-->
+
+
+    </div>
+    <!-- jQuery오픈소스연결 -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <!-- jQuery파일 연결 -->
+    <script src="js/script2.js"></script>
+
+    <!-- AOS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+
+</body>
+
+</html>
