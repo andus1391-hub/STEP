@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1848"> <!-- 1920 - (66*2) + (60) = 1848px -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #banner video {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            overflow: hidden;
+        }
+
+        #banner {
+            display: block;
+            overflow: hidden;
+            height: 867px;
+            position: relative;
+        }
+    </style>
+
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>STEP</title>
+
+    <!--외부 webfont 연결-->
+    <link rel="stylesheet" href="css/font.css">
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="css/style4.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS css 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/Main/favicon_icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- 마우스 효과 -->
+    <canvas id="cloudCursor"></canvas>
+
+    <!-- 종이비행기 커서 -->
+    <div id="planeCursor">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
+
+            <path d="M3 14 L29 3 L19 27 L15 18 Z" fill="#f3bdbd" stroke="#9E6565" stroke-width="0.7"
+                stroke-linejoin="round" />
+
+            <path d="M15 18 L29 3" stroke="#F6F3EB" stroke-width="0.7" />
+
+        </svg>
+    </div>
+
+    <div id="wrap"> <!-- 전체 페이지 색상 -->
+        <!-- =================================header시작============================================ -->
+
+        <div id="header">
+            <div class="inner_header">
+                <div class="nav_wrap">
+                    <h1 class="logo">
+                        <a href="index.html"><img src="./images/Main/header_logo.svg" alt="logo"></a>
+                    </h1>
+                    <div class="nav">
+                        <ul class="gnb">
+                            <li><a href="about.html"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">ABOUT</a></li>
+                            <li><a href="index.html#section1"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">EXPLORE</a>
+                            </li>
+                            <li><a href="index.html#section2"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">THEME</a>
+                            </li>
+                            <li><a href="Specials.html"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">SPECIALS</a></li>
+                            <li><a href="Guide.html" class="active"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">GUIDE</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="util">
+                    <ul class="right">
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">예약조회</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="topbtn"><img src="./images/Main/button_icon.svg" alt="btn"></div> -->
+        <!-- =================================header끝============================================ -->
+
+        <!-- ==============banner=================== -->
+        <div id="banner">
+            <video muted autoplay loop>
+                <source src="./images/Guide/Woman_rotating_slightly_in_breeze_20261008094040.mp4" type="video/mp4">
+            </video>
+
+            <div class="banner_text">
+                <h2>GUIDE</h2>
+                <p>A Guide to Your Kind of Journey</p>
+
+            </div>
+        </div>
+        <!-- ==============banner=================== -->
+
+
+        <!-- ==============section1====================== -->
+        <div id="section1">
+            <div class="section1_wrap">
+                <h3>Check List <img src="./images/Guide/section1_icon.svg" alt="line"></h3>
+
+
+                <!-- 첫번째카드 -->
+                <div data-aos="fade-left" data-aos-duration="1500" class="card">
+                    <div class="card_img">
+                        <img class="img1" src="./images/Guide/section1_pic1.png" alt="pic1">
+                    </div>
+
+                    <div class="card_txt">
+                        <h2>PACK LIGHT</h2>
+                        <p>What do I really need?</p>
+                        <ul>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">여권챙기기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">충전기 준비</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">카드 , 현금 준비</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">필요한 물건만 챙기기</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- 두번째카드 -->
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" class="card">
+                    <div class="card_img">
+                        <img class="img2" src="./images/Guide/section1_pic2.png" alt="pic2">
+                    </div>
+
+                    <div class="card_txt">
+                        <h2>KNOW YOUR WAY</h2>
+                        <p>Before you leave, know the way.</p>
+                        <ul>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">공항에서 숙소까지 확인</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">현지 교통수단 확인</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">지도 오프라인 저장</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">이동 시간 확인</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <!-- 세번째카드 -->
+                <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300" class="card">
+                    <div class="card_img">
+                        <img class="img3" src="./images/Guide/section1_pic3.png" alt="pic3">
+                    </div>
+
+                    <div class="card_txt">
+                        <h2>LEAVE SOME SPACE</h2>
+                        <p>Not every moment needs a plan.</p>
+                        <ul>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">꼭 가야할 장소 2~3곳 정하기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">자유시간 남겨두기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">일정 너무 빡빡하게 잡지 않기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">즉흥적인 시간 만들기</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- 네번째카드 -->
+                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="400" class="card">
+                    <div class="card_img">
+                        <img class="img4" src="./images/Guide/section1_pic4.png" alt="pic3">
+                    </div>
+
+                    <div class="card_txt">
+                        <h2>WANDER A LITTEL</h2>
+                        <p>Some places are better left undiscovered.</p>
+                        <ul>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">가보고 싶은 골목 찾기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">천천히 걸어보기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">현지 장소 발견하기</li>
+                            <li><img src="./images/Guide/checkbox.svg" alt="checkbox">사진 남겨보기</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- ============================section1=================================== -->
+
+
+
+
+
+
+        <!-- ============================section2=================================== -->
+        <div id="section2">
+
+            <div class="section2_sticky">
+            <div class="section2_wrap">
+                <h1>Solo Safety <img src="./images/Guide/section2_icon.svg" alt="solo"></h1>
+            </div>
+            <div class="swiper tip">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>STAY</h2>
+                            <div class="tip_box">
+                                <h3>혼자 움직이기 편한 숙소</h3>
+                                <p>숙소를 고를 때 관광지와의 거리뿐 아니라 <br>
+                                    혼자 돌아오기 편한 환경인지 살펴보기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic1.png" alt="tip_pic1">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>MOVE</h2>
+                            <div class="tip_box">
+                                <h3>도착 직후 사용할 교통수단</h3>
+                                <p>공항이나 역에 도착했을 때 바로 이용할 수 있는 <br>
+                                    교통수단을 미리 확인해두기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic2.png" alt="tip_pic2">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>SHARE</h2>
+                            <div class="tip_box">
+                                <h3>내 위치를 공유할 사람 한 명</h3>
+                                <p>여행 중 내가 어디에 있는지 <br>
+                                    알고 있는 사람을 한 명 정해두기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic3.png" alt="tip_pic3">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>HELP</h2>
+                            <div class="tip_box">
+                                <h3>혼자서도 도움받을 곳 알아두기</h3>
+                                <p>호텔 프런트, 관광안내소, 경찰서처럼 <br>
+                                    문제가 생겼을 때 도움을 요청할 수 있는 장소 알아두기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic4.png" alt="tip_pic4">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>BACKUP</h2>
+                            <div class="tip_box">
+                                <h3>휴대폰이 없어도 확인할 정보</h3>
+                                <p>숙소 주소, 비상 연락처, 예약 정보 등 <br>
+                                    꼭 필요한 정보는 따로 보관하기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic5.png" alt="tip_pic5">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="tip_card">
+                            <h2>TIME</h2>
+                            <div class="tip_box">
+                                <h3>나에게 맞는 귀가 시간</h3>
+                                <p>‘몇 시까지’라는 정답보다 <br>
+                                    내가 편안하게 이동할 수 있는 시간을 기준으로 정하기.</p>
+                            </div>
+
+                            <div class="tip_img">
+                                <img src="./images/Guide/section2_pic6.png" alt="tip_pic6">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="swiper-scrollbar"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================section2=================================== -->
+
+
+
+        <!-- footer -->
+        <div id="footer">
+            <div class="inner_footer">
+                <img src="./images/Main/footer_bottom_path.svg" class="footer_path" alt="path">
+                <img src="./images/Main/footer_bottom_plane.svg" class="footer_plane" alt="">
+                <h1 class="footer_logo"><img src="./images/Main/footer_logo.svg" alt="footer_logo"></h1>
+                <div class="news">
+                    <p class="eng">Solo Traveler's Everyday Path</p>
+                    <p>이메일로 새로운 여행 소식을 받아보세요.</p>
+                    <div class="input">
+                        <form action="" method="post">
+                            <input type="text" name="email" id="email" placeholder="이메일 주소를 입력해주세요.">
+                        </form>
+                        <div class="input_btn"></div>
+                    </div>
+                </div>
+
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><img src="./images/Main/sns_insta 1.svg" alt="ins"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_blog 1.svg" alt="blog"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_youtube 1.svg" alt="youtube"></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- footer -->
+
+
+    </div>
+    <!-- jQuery오픈소스연결 -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <!-- jQuery파일 연결 -->
+    <script src="js/script4.js"></script>
+
+    <!-- AOS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
