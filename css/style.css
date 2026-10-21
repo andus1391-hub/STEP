@@ -79,6 +79,57 @@ html {
     overflow-x: hidden;
 }
 
+
+/* ================= 마우스 연기 효과 ================= */
+#cloudCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ================= 종이비행기 커서 ================= */
+
+#planeCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 10000;
+    pointer-events: none;
+    display: none;
+    transform-origin: center;
+}
+
+/* 기본 마우스 커서 숨기기 */
+body {
+    cursor: none;
+}
+
+/* 링크와 버튼에서도 기본 커서 숨기기 */
+a,
+button,
+.topbtn,
+input[type="submit"],
+input[type="button"],
+#search,
+.input_btn {
+    cursor: pointer;
+}
+
+/* 입력창에서는 텍스트 커서 */
+input:not(#search),
+textarea {
+    cursor: text;
+}
+
+/*========================== 마우스커서========================== */
+
+
 /* ========================기본 body 꾸미기========== */
 /* 스크롤바 꾸미기 */
 ::-webkit-scrollbar {
@@ -111,6 +162,7 @@ body {
     min-width: 1880px;
     margin: 0 auto;
 }
+
 
 /* ====================header============================= */
 #header {
@@ -299,7 +351,7 @@ body {
 .text .eng span {
     display: inline-block;
     white-space: nowrap;
-     padding-right: 0.2em;
+    padding-right: 0.2em;
     clip-path: inset(0 100% 0 0);
 
     animation: sloganTyping 8s steps(36, end) infinite;
@@ -326,11 +378,18 @@ body {
 
 /* 문장 전체를 두 번 깜빡임 */
 @keyframes sloganBlink {
-    0%, 38%, 49%, 63%, 77%, 100% {
+
+    0%,
+    38%,
+    49%,
+    63%,
+    77%,
+    100% {
         opacity: 1;
     }
 
-    44%, 70% {
+    44%,
+    70% {
         opacity: 0;
     }
 }
@@ -913,7 +972,7 @@ body {
     height: 576px;
     display: block;
     position: absolute;
-  }
+}
 
 #section5 .pic_img1 {
     width: 517px;
