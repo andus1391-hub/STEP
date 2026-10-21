@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1848"> <!-- 1920 - (66*2) + (60) = 1848px -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #banner video {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            overflow: hidden;
+        }
+
+        #banner {
+            display: block;
+            overflow: hidden;
+            height: 867px;
+            position: relative;
+        }
+    </style>
+
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>STEP</title>
+
+    <!--외부 webfont 연결-->
+    <link rel="stylesheet" href="css/font.css">
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="css/style3.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS css 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/Main/favicon_icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- 마우스 효과 -->
+    <canvas id="cloudCursor"></canvas>
+
+    <!-- 종이비행기 커서 -->
+    <div id="planeCursor">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
+
+            <path d="M3 14 L29 3 L19 27 L15 18 Z" fill="#f3bdbd" stroke="#9E6565" stroke-width="0.7"
+                stroke-linejoin="round" />
+
+            <path d="M15 18 L29 3" stroke="#F6F3EB" stroke-width="0.7" />
+
+        </svg>
+    </div>
+
+
+
+    <div id="wrap"> <!-- 전체 페이지 색상 -->
+        <!-- =================================header시작============================================ -->
+
+        <div id="header">
+            <div class="inner_header">
+                <div class="nav_wrap">
+                    <h1 class="logo">
+                        <a href="index.html"><img src="./images/Main/header_logo.svg" alt="logo"></a>
+                    </h1>
+                    <div class="nav">
+                        <ul class="gnb">
+                            <li><a href="about.html"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">ABOUT</a></li>
+                            <li><a href="index.html#section1"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">EXPLORE</a>
+                            </li>
+                            <li><a href="index.html#section2"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">THEME</a>
+                            </li>
+                            <li><a href="Specials.html" class="active"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">SPECIALS</a></li>
+                            <li><a href="Guide.html"><img src="./images/Main/icon1.svg" alt="icon1"
+                                        class="plane">GUIDE</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="util">
+                    <ul class="right">
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">예약조회</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="topbtn"><img src="./images/Main/button_icon.svg" alt="btn"></div> -->
+        <!-- =================================header끝============================================ -->
+
+        <!-- ==============banner=================== -->
+        <div id="banner">
+            <video muted autoplay loop>
+                <source src="./images/Specials/Woman_looking_at_distant_landscape_20261008093232.mp4" type="video/mp4">
+            </video>
+
+            <div class="banner_text">
+                <h2>SPECIALS</h2>
+                <p>A little extra for your journey</p>
+
+            </div>
+        </div>
+        <!-- ==============banner=================== -->
+
+        <div id="section1">
+            <ul class="section1_wrap">
+                <li class="kenting on">
+                    <div class="card_open">
+                        <div class="open_img"><img src="./images/Specials/section1_kenting.png" alt="kenting"></div>
+                        <div class="kenting_txt">
+                            <h2>KENTING</h2>
+                            <p>에메랄드빛 바다와 다채로운 해양 생태계를 <br>
+                                만날 수 있는 대만의 다이빙 명소. <br>
+                                스쿠버 다이빙부터 스노클링까지, <br>
+                                바다 속 특별한 경험이 기다립니다.</p>
+
+                            <ul class="kenting_tag">
+                                <li>Scuba Diving</li>
+                                <li>Beach</li>
+                            </ul>
+
+                            <div class="tag_arrow"><img src="./images/Specials/section1_Arrow.svg" alt="arrow"></div>
+
+                            <div class="kenting_info">
+                                <dl>
+                                    <dt>Solo Level :</dt>
+                                    <dd>●●○○○</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Price :</dt>
+                                    <dd>₩ 500,000</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Available :</dt>
+                                    <dd>6월 ~ 9월</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_close">
+                        <img src="./images/Specials/section1_kenting_map.png" alt="kenting_map">
+                        <p>KENTING</p>
+                    </div>
+
+                </li>
+                <li class="sydney">
+                    <div class="card_open">
+                        <div class="open_img"><img src="./images/Specials/section1_sy.png" alt="sydney"></div>
+                        <div class="sydney_txt">
+                            <h2>SYDNEY</h2>
+                            <p>바다 위에 떠 있는 오페라 하우스와 <br>
+                                아름다운 항구가 어우러진 시드니. <br>
+                                도시의 낭만과 자연을 동시에 <br>
+                                느낄 수 있는 특별한 여행지 입니다.</p>
+
+                            <ul class="sydney_tag">
+                                <li>City Tour</li>
+                                <li>Ocean View</li>
+                            </ul>
+
+                            <div class="tag_arrow"><img src="./images/Specials/section1_Arrow.svg" alt="arrow"></div>
+
+                            <div class="sydney_info">
+                                <dl>
+                                    <dt>Solo Level :</dt>
+                                    <dd>●●○○○</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Price :</dt>
+                                    <dd>₩ 500,000</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Available :</dt>
+                                    <dd>10월 ~ 2월</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_close">
+                        <img src="./images/Specials/section1_sy_map.png" alt="sydney_map">
+                        <p>SYDNEY</p>
+                    </div>
+
+                </li>
+
+
+                <li class="nyc">
+                    <div class="card_open">
+                        <div class="open_img"><img src="./images/Specials/section1_nyc.png" alt="nyc"></div>
+                        <div class="nyc_txt">
+                            <h2>NEWYORK</h2>
+                            <p>세계의 중심에서 만나 <br>
+                                다양한 문화와 예술, 그리고 화려한 도시의 <br>
+                                에너지를 느낄 수 있는 뉴욕. <br><br>
+
+                                지금, 가장 특별한 순간을 경험하세요.</p>
+
+                            <ul class="nyc_tag">
+                                <li>City Tour</li>
+                                <li>Culture</li>
+                            </ul>
+
+                            <div class="tag_arrow"><img src="./images/Specials/section1_Arrow.svg" alt="arrow"></div>
+
+                            <div class="nyc_info">
+                                <dl>
+                                    <dt>Solo Level :</dt>
+                                    <dd>●●○○○</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Price :</dt>
+                                    <dd>₩ 1,000,000</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Available :</dt>
+                                    <dd>5월 ~ 7월</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card_close">
+                        <img src="./images/Specials/section1_nyc_map.png" alt="nyc_map">
+                        <p>NEWYORK</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- =============================section2================================== -->
+
+        <div id="section2">
+            <div class="section2_wrap">
+                <div class="wrap_txt">
+                    <h1>TIME DEAL<img src="./images/Specials/section2_icon.svg" alt="icon1"></h1>
+                    <h2><img src="./images/Specials/section2_icon2.svg" alt="icon2"> TOKYO <span> ￦600,000</span></h2>
+
+                    <ul>
+                        <li>취향을 따라 걷는 나홀로 시티 바캉스.</li>
+                        <li>복잡한 계획은 내려놓고, 그저 내가 좋아하는 것들로만 가득 채우는 <br>2박 3일 취향 수집 여행</li>
+                        <li>이어폰을 꽂고 화려한 신주쿠의 밤거리를 걷는 순간, <br>
+                            완벽한 시티팝의 주인공이 되어봅니다.</li>
+                    </ul>
+
+
+                    <div class="time_box">
+                        <!-- 라인 이미지 -->
+                        <img src="./images/Specials/section2_time_path_animated.svg" class="time_path" alt="line">
+
+                        <!-- 비행기 이미지 -->
+                        <img src="./images/Specials/section2_plane.svg" class="time_plane" alt="plane">
+
+
+                        <h3>떠나기 전 남은 시간</h3>
+                        <img src="./images/Specials/section2_line.svg" alt="line">
+
+                        <div class="timer">
+                            <div class="time">
+                                <span class="days">03</span>
+                                <small>DAYS</small>
+                            </div>
+
+                            <span>:</span>
+
+                            <div class="time">
+                                <span class="hours">13</span>
+                                <small>HRS</small>
+                            </div>
+
+                            <span>:</span>
+
+                            <div class="time">
+                                <span class="minutes">01</span>
+                                <small>MIN</small>
+                            </div>
+
+                            <span>:</span>
+
+                            <div class="time">
+                                <span class="seconds">00</span>
+                                <small>SEC</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- swiper -->
+                <div class="swiper wrap_img">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide img1">
+                            <img src="./images/Specials/section2_pic1.png" alt="pic1">
+                        </div>
+                        <div class="swiper-slide img2">
+                            <img src="./images/Specials/section2_pic2.png" alt="pic2">
+                        </div>
+                        <div class="swiper-slide img3">
+                            <img src="./images/Specials/section2_pic3.png" alt="pic3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book_btn">
+                    <button type="button" class="book_next" aria-label="다음 이미지"></button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ===========================section2================================= -->
+
+
+
+        <!-- ===========================section3================================= -->
+        <div id="section3">
+            <div class="section3_wrap">
+
+                <div class="left_wrap">
+                    <h1>GOODS
+                        <img src="./images/Specials/section3_icon.svg" alt="gift">
+                    </h1>
+
+                    <div class="left_pic">
+                        <div class="img_box">
+                            <img src="./images/Specials/section3_pic1.png" alt="pic1">
+                        </div>
+                        <p>STEP Goods Collection</p>
+                    </div>
+                </div>
+
+                <div class="right_wrap">
+                    <ul class="goods_right">
+                        <li>
+                            <div class="img_box">
+                                <img src="./images/Specials/section3_pic2.png" alt="pic2">
+                            </div>
+                            <p>Tote bag</p>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="./images/Specials/section3_pic3.png" alt="pic3">
+                            </div>
+                            <p>Luggage tag</p>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="./images/Specials/section3_pic4.png" alt="pic4">
+                            </div>
+                            <p>Keyring</p>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="./images/Specials/section3_pic5.png" alt="pic4">
+                            </div>
+                            <p>Postcard</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===========================section3================================= -->
+
+
+
+
+
+        <!-- ===========================section4================================= -->
+        <div id="section4">
+            <div class="section4_wrap">
+
+                <div data-aos="fade-right" data-aos-duration="1500" class="member_box">
+                    <h3>Member Deal
+                        <img class="s4_path" src="./images/Specials/section4_line.svg" alt="s4_path">
+                        <img class="s4_plane" src="./images/Specials/section4_plane.svg" alt="s4_plane">
+                    </h3>
+
+                    <div class="member_img">
+                        <div class="deal_img deal">
+                            <img src="./images/Specials/section4_pic1.png" alt="pic1">
+
+                            <p class="hover_txt">
+                                나만의 타이밍에 맞춘 여행, <br>언제나 10% 가벼운 가격으로
+                            </p>
+
+                        </div>
+                        <div class="deal_img2 deal">
+                            <img src="./images/Specials/section4_pic2.png" alt="pic2">
+
+                            <p class="hover_txt">
+                                당신의 꾸준한 여정을 응원하며, <br> 5회 이용 시 무료 숙박권 증정
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div data-aos="fade-right" data-aos-duration="1500" class="package_box">
+                    <h3>Welcome Package
+                         <img class="s4_path" src="./images/Specials/section4_line.svg" alt="s4_path">
+                        <img class="s4_plane" src="./images/Specials/section4_plane.svg" alt="s4_plane">
+                    </h3>
+
+                    <div class="package_img">
+                        <div class="deal_img3 deal">
+                            <img src="./images/Specials/section4_pic3.png" alt="pic3">
+
+                            <p class="hover_txt">
+                                첫 혼행의 든든한 길잡이, <br>데이터 걱정 없는 무료 유심
+                            </p>
+
+                        </div>
+                        <div class="deal_img4 deal">
+                            <img src="./images/Specials/section4_pic4.png" alt="pic4">
+
+                            <p class="hover_txt">
+                                여행의 여운이 가시기 전, <br> 두 번째 여정을 위한 20% 할인
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- ===========================section4================================= -->
+
+
+
+
+
+
+
+
+        <!-- footer -->
+        <div id="footer">
+            <div class="inner_footer">
+                <img src="./images/Main/footer_bottom_path.svg" class="footer_path" alt="path">
+                <img src="./images/Main/footer_bottom_plane.svg" class="footer_plane" alt="">
+                <h1 class="footer_logo"><img src="./images/Main/footer_logo.svg" alt="footer_logo"></h1>
+                <div class="news">
+                    <p class="eng">Solo Traveler's Everyday Path</p>
+                    <p>이메일로 새로운 여행 소식을 받아보세요.</p>
+                    <div class="input">
+                        <form action="" method="post">
+                            <input type="text" name="email" id="email" placeholder="이메일 주소를 입력해주세요.">
+                        </form>
+                        <div class="input_btn"></div>
+                    </div>
+                </div>
+
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><img src="./images/Main/sns_insta 1.svg" alt="ins"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_blog 1.svg" alt="blog"></a></li>
+                        <li><a href="#"><img src="./images/Main/sns_youtube 1.svg" alt="youtube"></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- footer -->
+
+
+    </div>
+    <!-- jQuery오픈소스연결 -->
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <!-- jQuery파일 연결 -->
+    <script src="js/script3.js"></script>
+
+    <!-- AOS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
