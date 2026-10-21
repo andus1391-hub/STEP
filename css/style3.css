@@ -1,0 +1,1482 @@
+@charset "utf-8";
+
+/* webfont */
+/* 웹폰트없으면 지우세요!!! */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ================= 마우스 연기 효과 ================= */
+#cloudCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ================= 종이비행기 커서 ================= */
+
+#planeCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 10000;
+    pointer-events: none;
+    display: none;
+    transform-origin: center;
+}
+
+/* 기본 마우스 커서 숨기기 */
+body {
+    cursor: none;
+}
+
+/* 링크와 버튼에서도 기본 커서 숨기기 */
+a,
+button,
+.topbtn,
+input[type="submit"],
+input[type="button"],
+#search,
+.input_btn {
+    cursor: pointer;
+}
+
+/* 입력창에서는 텍스트 커서 */
+input:not(#search),
+textarea {
+    cursor: text;
+}
+
+/*========================== 마우스커서========================== */
+
+/* ========================기본 body 꾸미기========== */
+/* 스크롤바 꾸미기 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C8BBA8;
+    border-radius: 10px;
+    border: 2px solid #F6F3EB;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8D7A67;
+}
+
+body {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    line-height: 1.5;
+    color: #33363F;
+    background-color: #F6F3EB;
+}
+
+#wrap {
+    min-width: 1880px;
+    margin: 0 auto;
+}
+
+/* ====================header============================= */
+#header {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #F6F3EB;
+}
+
+
+.nav_wrap {
+    display: flex;
+    align-items: center;
+
+}
+
+.inner_header {
+    display: flex;
+    width: 1880px;
+    margin: 0 auto;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0 144px 0 66px;
+}
+
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #8D7A67;
+    padding: 29px 50px;
+    transition: all 0.5s;
+    /* background-color: aqua; */
+
+    /* 비행기 호버모션 */
+    position: relative;
+    z-index: 1;
+}
+
+.gnb li a .plane {
+    position: absolute;
+    width: 20px;
+
+    top: 50%;
+    right: 18px;
+
+    opacity: 0;
+
+    transform: translateY(-50%) rotate(-20deg);
+}
+
+
+.gnb li a:hover {
+    font-weight: 500;
+}
+
+.gnb li a.active {
+    font-weight: 600;
+}
+
+.gnb li a.active .plane {
+    top: 29%;
+    left: 69%;
+    opacity: 1;
+    transform: rotate(10deg);
+    animation: none;
+}
+
+
+.gnb li:hover .plane {
+    animation: planeUp 1.5s ease-out forwards;
+}
+
+/* 비행기 애니메이션 */
+
+@keyframes planeUp {
+    0% {
+        left: 20px;
+        top: 35px;
+        opacity: 0;
+        transform: rotate(20deg);
+    }
+
+    /* 살짝 나타남 */
+    20% {
+        opacity: 1;
+    }
+
+    /* 위로 날아감 */
+    100% {
+        left: 120px;
+        top: 0px;
+        opacity: 0;
+        transform: rotate(20deg);
+    }
+}
+
+
+.util {
+    margin-right: 92px;
+}
+
+
+.right {
+    display: flex;
+}
+
+.right li a {
+    display: block;
+    padding: 0 10px;
+    color: #8d7a67;
+    transition: all 0.5s;
+}
+
+.right li a:hover {
+    font-weight: 600;
+}
+
+/* .topbtn {
+    width: 63px;
+    height: 63px;
+    background-color: #EAE5D9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 95px;
+    bottom: 72px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.topbtn a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbtn img {
+    display: block;
+} */
+
+/* ====================header============================= */
+
+#banner {
+    width: 100%;
+    height: 800px;
+    margin-bottom: 120px;
+    position: relative;
+}
+
+#banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 0%;
+}
+
+#banner .banner_text {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    position: absolute;
+    top: 40%;
+    right: 345px;
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+#banner h2 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+#banner p {
+    font-size: 32px;
+    font-weight: 500;
+
+}
+
+
+/* ===========================section1============================ */
+#section1 {
+    width: 1600px;
+    height: 620px;
+    margin: 180px auto;
+}
+
+.section1_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* 기본적으로 펼쳐진 콘텐츠 숨기기 */
+.section1_wrap>li .card_open {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+/* 기본적으로 접힌 콘텐츠 보이기 */
+.section1_wrap>li .card_close {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* on 클래스가 있으면 펼쳐진 콘텐츠 보이기 */
+.section1_wrap>li.on .card_open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.3s;
+}
+
+/* on 클래스가 있으면 접힌 콘텐츠 숨기기 */
+.section1_wrap>li.on .card_close {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.3s;
+}
+
+/* 아코디언 카드 그림자 */
+.section1_wrap>li {
+    transition: width 1.2s ease, box-shadow 0.4s ease;
+}
+
+
+/* 호버했을 때 그림자 */
+.section1_wrap>li:hover,
+.section1_wrap>li.on {
+    box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+
+
+
+/* 카드 위치 기준 */
+.section1_wrap>li {
+    position: relative;
+    width: 290px;
+    height: 620px;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width 1.2s ease;
+}
+
+.section1_wrap>li.on {
+    width: 920px;
+}
+
+.card_open {
+    display: flex;
+    width: 920px;
+    height: 620px;
+    background-color: #fefdfd;
+}
+
+.card_open .open_img img {
+    width: 468px;
+    height: 620px;
+    display: block;
+    object-fit: cover;
+}
+
+.card_close {
+    width: 290px;
+    height: 620px;
+    color: #E48D8D;
+    background-color: #E48D8D50;
+    position: relative;
+}
+
+
+.card_close p {
+    font-size: 16px;
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+}
+
+
+/* kenting */
+.kenting {
+    /* box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.kenting_txt {
+    width: 452px;
+    box-sizing: border-box;
+    padding: 67px 133px 37px 54px;
+}
+
+.kenting_txt h2 {
+    font-weight: 400;
+    font-size: 32px;
+    color: #E48D8D;
+}
+
+.kenting_txt p {
+    padding: 22px 0 100px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.tag_arrow {
+    margin-bottom: 8px;
+}
+
+
+.kenting_tag {
+    color: #E48D8D;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.kenting_tag li {
+    padding: 1px 15px;
+    border: 2px solid #C78A8A;
+    border-radius: 20px;
+}
+
+.kenting_info dl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.kenting_info dt,
+.kenting_info dd {
+    font-size: 16px;
+    color: #33363F;
+}
+
+.kenting .card_close img {
+    width: 197px;
+    height: 250px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* sydney */
+
+
+.sydney {
+    /* box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.sydney_txt {
+    width: 452px;
+    box-sizing: border-box;
+    padding: 67px 133px 37px 54px;
+}
+
+.sydney_txt h2 {
+    font-weight: 400;
+    font-size: 32px;
+    color: #E48D8D;
+}
+
+.sydney_txt p {
+    padding: 22px 0 100px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.tag_arrow {
+    margin-bottom: 8px;
+}
+
+
+.sydney_tag {
+    color: #E48D8D;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.sydney_tag li {
+    padding: 1px 15px;
+    border: 2px solid #C78A8A;
+    border-radius: 20px;
+}
+
+.sydney_info dl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.sydney_info dt,
+.sydney_info dd {
+    font-size: 16px;
+    color: #33363F;
+}
+
+.sydney .card_close img {
+    width: 219px;
+    height: 201px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* newyork */
+
+.nyc {
+    /* box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.nyc_txt {
+    width: 452px;
+    box-sizing: border-box;
+    padding: 67px 133px 37px 54px;
+}
+
+.nyc_txt h2 {
+    font-weight: 400;
+    font-size: 32px;
+    color: #E48D8D;
+}
+
+.nyc_txt p {
+    padding: 22px 0 63px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.tag_arrow {
+    margin-bottom: 8px;
+}
+
+
+.nyc_tag {
+    color: #E48D8D;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.nyc_tag li {
+    padding: 1px 15px;
+    border: 2px solid #C78A8A;
+    border-radius: 20px;
+}
+
+.nyc_info dl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.nyc_info dt,
+.nyc_info dd {
+    font-size: 16px;
+    color: #33363F;
+}
+
+.nyc .card_close img {
+    width: 219px;
+    height: 121px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* 펼쳐진 카드 */
+.card_open {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 접힌 카드 */
+.card_close {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ======================section2========================= */
+#section2 {
+    width: 1920px;
+    height: 1000px;
+    padding: 97px 0 117px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.section2_wrap {
+    width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 162px;
+}
+
+/* 시계 아이콘 회전 */
+.wrap_txt h1 img {
+    animation: clockRotate 2.5s linear infinite;
+}
+
+/* 회전 애니메이션 */
+@keyframes clockRotate {
+
+    0%,
+    100% {
+        transform: rotate(-25deg);
+    }
+
+    25%,
+    75% {
+        transform: rotate(25deg);
+    }
+
+    50% {
+        transform: rotate(-25deg);
+    }
+}
+
+#section2 .wrap_img {
+    margin-top: 20px;
+}
+
+#section2 .wrap_img .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap_img img {
+    width: 628px;
+    height: 765px;
+    display: block;
+    padding-top: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 628px;
+    height: 765px;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 버튼 위치 기준 */
+.section2_wrap {
+    position: relative;
+}
+
+/* 버튼 전체 */
+.book_btn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    z-index: 20;
+}
+
+/* 흰색 동그라미 버튼 */
+.book_next {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+
+    position: relative;
+}
+
+/* 동그라미 안 화살표 */
+.book_next::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #C78A8A;
+    border-right: 2px solid #C78A8A;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -50%) rotate(45deg);
+}
+
+
+/* 호버 */
+.book_next:hover {
+    background-color: #F2E2DC;
+    transform: scale(1.1);
+}
+
+
+.wrap_txt {
+    width: 538px;
+    flex-shrink: 0;
+}
+
+.wrap_txt h1 {
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wrap_txt h2 {
+    font-size: 48px;
+    font-weight: 500;
+    display: flex;
+    gap: 39px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #33363F;
+    margin: 90px 0 58px;
+    padding-bottom: 17px;
+}
+
+.wrap_txt h2 span {
+    font-size: 20px;
+    font-weight: 400;
+    padding-right: 40px;
+    padding-top: 40px;
+}
+
+
+/* 이미지와 TOKYO 사이 간격 */
+.wrap_txt h2 img {
+    margin-right: 15px;
+}
+
+/* TOKYO와 가격 사이 간격 */
+.wrap_txt h2 span {
+    margin-left: 40px;
+}
+
+
+#section2 ul li {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* li 앞에 동그라미 만들기 */
+.wrap_txt ul li {
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 44px;
+
+}
+
+/* 동그라미 디자인 */
+.wrap_txt ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 15px;
+    height: 15px;
+    background-color: #C78A8A;
+    border-radius: 50%;
+}
+
+.time_box {
+    width: 446px;
+    height: 172px;
+    background-color: #F2E2DC;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* .time_box::after {
+    content: "";
+    position: absolute;
+    width: 195px;
+    height: 66px;
+    background: url(../images/Specials/section2_icon3.svg) no-repeat center / contain;
+    top: -5%;
+    left: -71px;
+} */
+
+/* ================= 비행기 라인 애니메이션 ================= */
+
+/* 고리 모양 라인 */
+.time_box .time_path {
+    position: absolute;
+    width: 158px;
+    height: 59px;
+    top: -6px;
+    left: -71px;
+    display: block;
+    pointer-events: none;
+}
+
+/* 비행기 */
+.time_box .time_plane {
+    position: absolute;
+    width: 50px;
+    height: 26px;
+    top: -24px;
+    left: 87px;
+    display: block;
+    opacity:0;
+    pointer-events: none;
+
+    animation: timePlaneFly 6s ease-in-out infinite;
+}
+
+/* 비행기 이륙 애니메이션 */
+@keyframes timePlaneFly {
+
+    0%, 55% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translate(25px, -25px) rotate(10deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(25px, -25px) rotate(10deg);
+    }
+}
+
+.time_box h3 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+/* 숫자 전체 가로 정렬 */
+.time_box .timer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* 숫자 + 영문 단위 */
+.time_box .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 65px;
+}
+
+/* 카운트다운 숫자 */
+.time_box .time span {
+    font-size: 24px;
+    font-weight: 400;
+    color: #C78A8A;
+    line-height: 1;
+}
+
+/* DAYS / HRS / MIN / SEC */
+.time_box .time small {
+    font-size: 12px;
+    font-weight: 400;
+    color: #33363F;
+    margin-top: 12px;
+}
+
+/* 숫자 사이 콜론(:) */
+.time_box .timer>span {
+    font-size: 24px;
+    font-weight: 400;
+    color: #C78A8A;
+    line-height: 1;
+}
+
+/* ======================section2========================= */
+
+
+
+
+/* =============================section3======================== */
+#section3 {
+    width: 1920px;
+    height: 950px;
+    margin: 0 auto;
+    background: url(../images/Specials/section3_bg.png) no-repeat center;
+}
+
+
+.section3_wrap {
+    margin: 0 auto;
+    padding-top: 53px;
+    width: 1320px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+.left_wrap h1 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #8D7A6C;
+    margin-bottom: 40px;
+}
+
+.left_wrap h1::after {
+    content: "";
+    width: 309px;
+    display: block;
+    height: 1.5px;
+    background-color: #D5BAA7;
+}
+
+.left_wrap h1 img {
+    display: inline-block;
+    animation: goodsBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes goodsBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+
+.left_pic {
+    width: 560px;
+    background-color: #fff;
+    padding: 53px 40px 0;
+    box-sizing: border-box;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.left_pic::before {
+    content: "";
+    display: block;
+    width: 179px;
+    height: 105px;
+    background: url(../images/Specials/section3_icon2.svg) no-repeat;
+
+    position: absolute;
+    top: -13px;
+    left: -58px;
+    z-index: 2;
+}
+
+.left_pic .img_box {
+    width: 480px;
+    height: 550px;
+    overflow: hidden;
+}
+
+.left_pic img {
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.left_pic .img_box:hover img {
+    transform: scale(1.1);
+}
+
+.left_pic p {
+    font-weight: 400;
+    padding: 24px 0 38px 10px;
+    font-size: 16px;
+    color: #33363F;
+}
+
+.left_pic p::after {
+    content: "";
+    width: 183px;
+    display: block;
+    height: 1px;
+    background-color: #33363F;
+    margin-top: 2px;
+}
+
+.goods_right {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.goods_right .img_box {
+    width: 300px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.goods_right img {
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.goods_right .img_box:hover img{
+    transform: scale(1.1);
+}
+
+.goods_right li {
+    background-color: #fff;
+    padding: 22px 20px;
+    transition: all 0.3s;
+}
+
+.goods_right li:last-child {
+    transform: rotate(10deg);
+}
+
+.goods_right li p {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.goods_right li p::after {
+    content: "";
+    width: 99px;
+    display: block;
+    height: 1px;
+    background-color: #33363F;
+    margin-top: 2px;
+}
+
+
+/* =============================section3======================== */
+
+
+
+
+
+
+/* ===========================section4=============================== */
+#section4{
+    width: 1920px;
+    margin: 250px auto 0;
+}
+.section4_wrap{
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#section4 .member_img img,
+#section4 .package_img img {
+    width: 650px;
+    height: 272px;
+    display: block;
+}
+
+#section4 .deal{
+    position: relative;
+    
+}
+
+.section4_wrap h3{
+    font-size: 32px;
+    font-weight: 400;
+    color: #8D7A6C;
+    padding-bottom: 15px;
+}
+#section4 .member_box .s4_path,
+#section4 .package_box .s4_path
+{
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    left: 36px;
+
+     /* 라인 그리기 */
+    clip-path: inset(0 100% 0 0);
+    animation: s4LineDraw 4s linear infinite;
+}
+
+#section4 .member_box .s4_plane,
+#section4 .package_box .s4_plane
+{
+    display: inline-block;
+    position: relative;
+    top: 9px;
+    left: 36px;
+
+     /* 비행기 이륙 */
+    opacity: 0;
+    animation: s4PlaneFly 4s ease-out infinite;
+}
+
+/* 선이 왼쪽에서 오른쪽으로 그어짐 */
+@keyframes s4LineDraw {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    55%, 100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* 선이 완성된 뒤 비행기 출발 */
+@keyframes s4PlaneFly {
+    0%, 54% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    85%, 100% {
+        opacity: 1;
+        transform: translate(15px, -5px);
+    }
+}
+
+
+.member_box{
+    margin-bottom: 123px;
+}
+
+.member_img,
+.package_img{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.hover_txt{
+    font-size:18px ;
+    font-weight:600;
+    color: #fff;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+#section4 .deal::after{
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    width: 100px;
+    height: 50px;
+
+    background: url(../images/Specials/section4_logo.svg) no-repeat center;
+    pointer-events: none;
+
+    z-index: 999;
+}
+
+/* 이미지 박스 */
+#section4 .deal {
+    position: relative;
+    overflow: hidden;
+     cursor: pointer;
+}
+
+/* 호버 배경색 */
+#section4 .deal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+/* 글자 - 처음에는 아래에 위치 */
+#section4 .deal .hover_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 30px));
+
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 호버 시 배경색 */
+#section4 .deal:hover::before {
+    opacity: 1;
+}
+
+/* 호버 시 글자 위로 이동 */
+#section4 .deal:hover .hover_txt {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* ===========================section4=============================== */
+
+
+
+
+
+
+/* ==============================footer ================================ */
+#footer {
+    background-image: url(../images/Main/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1920px 463px;
+    margin-top: 220px;
+}
+
+.inner_footer {
+    width: 1790px;
+    height: 463px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-image: url(../1.Main/footer_bottom_path.svg), url(../1.Main/footer_bottom_plane.svg);
+   background-repeat: no-repeat, no-repeat;
+   background-position: 100% 93%, 0% 82%;
+   background-size: auto, 28px auto; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 선 */
+.footer_path {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 7%;
+    clip-path: inset(0 100% 0 0);
+    animation: lineDraw 11s linear infinite;
+}
+
+/* 비행기 */
+.footer_plane {
+    position: absolute;
+    width: 30px;
+    height: 28px;
+    left: 0;
+    top: calc(100% - 7% - 57.1px);
+    bottom: auto;
+
+    offset-path: path("M0.2,56.25 C161.68,16.86 283.37,18.64 366.70,28.56 C422.55,35.20 479.00,47.60 571.02,44.22 C636.76,41.80 652.15,33.86 746.04,30.51 C818.32,27.92 827.64,31.98 895.05,28.53 C980.30,24.17 985.19,16.66 1049.62,13.21 C1081.30,11.53 1097.66,12.40 1273.18,27.15 C1430.77,40.39 1439.09,41.50 1467.31,40.33 C1504.22,38.79 1520.98,35.60 1650.68,18.64 C1710.95,10.76 1759.66,4.59 1789.90,0.80");
+
+    offset-anchor: 0% 50%;
+    offset-rotate: auto;
+    animation: planeMove 11s linear infinite;
+}
+
+
+@keyframes lineDraw {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* 비행기 이동 */
+@keyframes planeMove {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}
+
+.footer_logo {
+    padding-top: 200px;
+
+}
+
+.news {
+    text-align: left;
+    color: #EAE6DA;
+    padding-top: 150px;
+}
+
+
+#footer .eng {
+    font-family: 'Ammys Handwriting', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 8px;
+    transform: rotate(-3deg);
+    margin-bottom: 22px;
+}
+
+#footer p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+.input {
+    width: 590px;
+    border: 1px solid #EAE6DA;
+    border-radius: 100px;
+    padding: 32px 0 32px 30px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.input input {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #EAE5D9;
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.input input::placeholder {
+    color: #EAE5D9;
+}
+
+.input_btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #EAE6DA;
+    background-image: url(../images/Main/arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 2px;
+    right: -9px;
+    cursor: pointer;
+}
+
+.sns ul {
+    display: flex;
+    gap: 29px;
+    padding-top: 150px;
+}
+
+.sns li a {
+    transition: all 0.5s;
+}
+
+.sns li a:hover {
+    opacity: 60%;
+}
+
+
+
+/* ==============================footer ================================ */
