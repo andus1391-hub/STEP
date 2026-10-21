@@ -216,3 +216,210 @@ $.each(text.split(""), function (i, letter) {
         .appendTo($lastText);
 
 });
+
+
+
+/* ================= 종이비행기 마우스 커서 ================= */
+
+$(function () {
+
+    let lastX = null;
+    let lastY = null;
+    let angle = 0;
+
+    // 마우스 이동
+    $(document).on("mousemove", function (e) {
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // 링크, 버튼, 입력창에서는 종이비행기 숨기기
+        if ($(e.target).closest("a, button, .topbtn, input, textarea, .input_btn").length) {
+            $("#planeCursor").hide();
+        } else {
+            $("#planeCursor").show();
+        }
+
+        if (lastX !== null && lastY !== null) {
+
+            const dx = x - lastX;
+            const dy = y - lastY;
+
+            // 마우스 이동 방향에 따라 회전
+            if (Math.sqrt(dx * dx + dy * dy) > 2) {
+
+                const targetAngle =
+                    Math.atan2(dy, dx) * 180 / Math.PI + 45;
+
+                let difference =
+                    ((targetAngle - angle + 540) % 360) - 180;
+
+                angle += difference * 0.32;
+            }
+        }
+
+        // 마우스 위치에 종이비행기 표시
+        $("#planeCursor").css({
+            transform:
+                `translate(${x - 15}px, ${y - 15}px) rotate(${angle}deg)`
+        });
+
+        lastX = x;
+        lastY = y;
+
+    });
+
+    // 브라우저 밖으로 나가면 숨김
+    $(document).on("mouseleave", function () {
+
+        $("#planeCursor").hide();
+
+        lastX = null;
+        lastY = null;
+
+    });
+
+});
+
+/* ================= 마우스 먼지 입자 효과 ================= */
+
+$(function () {
+
+    const canvas = document.getElementById("cloudCursor");
+    const ctx = canvas.getContext("2d");
+
+    // 캔버스 크기 설정
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+
+    $(window).on("resize", resizeCanvas);
+
+    // 먼지 입자를 저장할 배열
+    let dust = [];
+
+    // 이전 마우스 위치
+    let lastX = null;
+    let lastY = null;
+
+    // 먼지 입자 생성
+    function createDust(x, y) {
+
+        for (let i = 0; i < 2; i++) {
+
+            dust.push({
+                x: x + (Math.random() - 0.5) * 10,
+                y: y + (Math.random() - 0.5) * 10,
+
+                // 입자가 흩날리는 방향
+                speedX: (Math.random() - 0.5) * 0.8,
+                speedY: (Math.random() - 0.5) * 0.8,
+
+                // 입자 크기
+                size: Math.random() * 1.7 + 0.5,
+
+                // 투명도
+                opacity: Math.random() * 0.3 + 0.45,
+
+                // 사라지는 속도
+                fade: Math.random() * 0.012 + 0.012
+            });
+
+        }
+    }
+
+    // 마우스 이동 이벤트
+    $(document).on("mousemove", function (e) {
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        if (lastX !== null && lastY !== null) {
+
+            const dx = x - lastX;
+            const dy = y - lastY;
+
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            // 마우스가 빠르게 움직여도 입자가 이어지도록 생성
+            const steps = Math.min(30, Math.ceil(distance / 7));
+
+            for (let i = 1; i <= steps; i++) {
+
+                const ratio = i / steps;
+
+                createDust(
+                    lastX + dx * ratio,
+                    lastY + dy * ratio
+                );
+            }
+
+        } else {
+            createDust(x, y);
+        }
+
+        lastX = x;
+        lastY = y;
+
+        // 입자가 너무 많이 쌓이지 않도록 제한
+        if (dust.length > 600) {
+            dust.splice(0, dust.length - 600);
+        }
+
+    });
+
+    // 브라우저 밖으로 나가면 이전 위치 초기화
+    $(document).on("mouseleave", function () {
+        lastX = null;
+        lastY = null;
+    });
+
+    // 먼지 입자 애니메이션
+    function animateDust() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = dust.length - 1; i >= 0; i--) {
+
+            const particle = dust[i];
+
+            // 입자가 천천히 흩날림
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+
+            // 서서히 투명해짐
+            particle.opacity -= particle.fade;
+
+            // 사라진 입자 삭제
+            if (particle.opacity <= 0) {
+                dust.splice(i, 1);
+                continue;
+            }
+
+            ctx.beginPath();
+
+            // 로즈 핑크 #C78A8A
+            ctx.fillStyle = `rgba(199,138,138,${particle.opacity})`;
+
+            ctx.arc(
+                particle.x,
+                particle.y,
+                particle.size,
+                0,
+                Math.PI * 2
+            );
+
+            ctx.fill();
+        }
+
+        requestAnimationFrame(animateDust);
+    }
+
+    // 애니메이션 실행
+    animateDust();
+
+});
+
