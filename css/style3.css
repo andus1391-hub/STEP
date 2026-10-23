@@ -346,16 +346,72 @@ body {
     z-index: 10;
 }
 
-#banner h2 {
+#banner .banner_text h2 {
     font-size: 48px;
     font-weight: 600;
+
+     /* 타이핑효과 */
+    display: block;
+    white-space: nowrap;
+
+    padding-right: 0.2em;
+    clip-path: inset(0 100% 0 0);
+
+     animation:h2Typing 6s steps(36, end) forwards;
 }
 
-#banner p {
+#banner .banner_text p {
     font-size: 32px;
     font-weight: 500;
 
+     /* 타이핑효과 */
+    /* display: inline-block;
+    white-space: nowrap;
+
+    padding-right: 0.2em;
+    clip-path: inset(0 100% 0 0);
+
+     animation:sloganTyping 6s steps(36, end) infinite; */
+    
 }
+
+/* 왼쪽에서 오른쪽으로 타이핑 h2 타이핑 */
+@keyframes h2Typing {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    38% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    99.9% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* 왼쪽에서 오른쪽으로 p타이핑  타이핑 */
+/* @keyframes sloganTyping {
+    0%, 30% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    70% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    99.9% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 100% 0 0);
+    }
+} */
 
 
 /* ===========================section1============================ */
@@ -1125,6 +1181,16 @@ body {
 
 .goods_right li:last-child {
     transform: rotate(10deg);
+}
+
+/* 마지막 li AOS 시작 */
+.goods_right li:last-child[data-aos="zoom-in"] {
+    transform: scale(0.6) rotate(10deg);
+}
+
+/* 마지막 li AOS 완료 */
+.goods_right li:last-child[data-aos="zoom-in"].aos-animate {
+    transform: scale(1) rotate(10deg);
 }
 
 .goods_right li p {
