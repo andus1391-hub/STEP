@@ -446,14 +446,16 @@ body {
 .section1_wrap>li.on .card_open {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.2s ease, visibility 0.3s;
+    /* transition: opacity 0.2s ease, visibility 0.3s; */
+    transition: opacity 0.7s ease, visibility 0.7s;
 }
 
 /* on 클래스가 있으면 접힌 콘텐츠 숨기기 */
 .section1_wrap>li.on .card_close {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.3s;
+    /* transition: opacity 0.2s ease, visibility 0.3s; */
+    transition: opacity 0.7s ease, visibility 0.7s;
 }
 
 /* 아코디언 카드 그림자 */
@@ -479,7 +481,9 @@ body {
     height: 620px;
     flex-shrink: 0;
     overflow: hidden;
-    transition: width 1.2s ease;
+
+     transition: width 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    /* transition: width 1.2s ease; */
 }
 
 .section1_wrap>li.on {
